@@ -21,17 +21,17 @@ class UserTests: XCTestCase {
     
     func test_Init_WithDictionary_Sets_All_Properties() {
         
-        guard let dictUser = JSONMockLoader.loadJSONFrom(fileWithName: "user", usingClass: self) else {
+        guard let dictUser = JSONMockLoader.loadJSONFrom(file: "user", usingClass: self) else {
             XCTFail("a valid JSON file is needed to proceed with the test.")
             return
         }
         
-        guard let dictAddress = JSONMockLoader.loadJSONFrom(fileWithName: "address", usingClass: self) else {
+        guard let dictAddress = JSONMockLoader.loadJSONFrom(file: "address", usingClass: self) else {
             XCTFail("a valid JSON file is needed to proceed with the test.")
             return
         }
         
-        guard let dictCompany = JSONMockLoader.loadJSONFrom(fileWithName: "company", usingClass: self) else {
+        guard let dictCompany = JSONMockLoader.loadJSONFrom(file: "company", usingClass: self) else {
             XCTFail("a valid JSON file is needed to proceed with the test.")
             return
         }
@@ -52,12 +52,12 @@ class UserTests: XCTestCase {
     
     func test_Init_WithDictionary_NoAddress_Sets_All_Properties_But_Address() {
         
-        guard let dictUser = JSONMockLoader.loadJSONFrom(fileWithName: "user_no_address", usingClass: self) else {
+        guard let dictUser = JSONMockLoader.loadJSONFrom(file: "user_no_address", usingClass: self) else {
             XCTFail("a valid JSON file is needed to proceed with the test.")
             return
         }
         
-        guard let dictCompany = JSONMockLoader.loadJSONFrom(fileWithName: "company", usingClass: self) else {
+        guard let dictCompany = JSONMockLoader.loadJSONFrom(file: "company", usingClass: self) else {
             XCTFail("a valid JSON file is needed to proceed with the test.")
             return
         }
@@ -77,7 +77,7 @@ class UserTests: XCTestCase {
     
     func test_Init_WithDictionary_NoCompany_Sets_All_Properties_But_Company() {
         
-        guard let dictUser = JSONMockLoader.loadJSONFrom(fileWithName: "user_no_company", usingClass: self) else {
+        guard let dictUser = JSONMockLoader.loadJSONFrom(file: "user_no_company", usingClass: self) else {
             XCTFail("a valid JSON file is needed to proceed with the test.")
             return
         }

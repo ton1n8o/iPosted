@@ -21,7 +21,7 @@ class AddressTests: XCTestCase {
     
     func test_Init_WithDictionary_Sets_All_Properties() {
         
-        guard let dictAddress = JSONMockLoader.loadJSONFrom(fileWithName: "address", usingClass: self) else {
+        guard let dictAddress = JSONMockLoader.loadJSONFrom(file: "address", usingClass: self) else {
             XCTFail("a valid JSON file is needed to proceed with the test.")
             return
         }
@@ -38,7 +38,7 @@ class AddressTests: XCTestCase {
     
     func test_Init_WithDictionary_NoGeo_Sets_All_Properties_But_Geo() {
         
-        guard let dictAddress = JSONMockLoader.loadJSONFrom(fileWithName: "address_no_geo", usingClass: self) else {
+        guard let dictAddress = JSONMockLoader.loadJSONFrom(file: "address_no_geo", usingClass: self) else {
             XCTFail("a valid JSON file is needed to proceed with the test.")
             return
         }

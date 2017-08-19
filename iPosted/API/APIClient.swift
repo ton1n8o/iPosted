@@ -14,13 +14,27 @@ class APIClient {
     
     func loadUsers(completion: @escaping ([User]?, Error?) -> Void) {
         
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else {
+        guard let url = URL(string: APIEndpoints.USERS) else {
             fatalError()
         }
         
         session.dataTask(with: url) { (data, response, error) in
+            guard let data = data else {
+                return
+            }
             
-        }
+            var users: [User]? = nil
+            
+            if let dict = try! JSONSerialization.jsonObject(with: data, options: []) as? [[String: AnyObject]] {
+                users = [User]()
+                for d in dict {
+                    users?.append(User(dict: d))
+                }
+            }
+            
+            completion(users, nil)
+            
+        }.resume()
     }
     
 }

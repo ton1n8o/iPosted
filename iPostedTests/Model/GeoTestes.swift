@@ -21,7 +21,7 @@ class GeoTestes: XCTestCase {
     
     func test_Init_WithDictionary_Sets_All_Properties_Properly() {
         
-        guard let dictGeo = JSONMockLoader.loadJSONFrom(fileWithName: "geo", usingClass: self) else {
+        guard let dictGeo = JSONMockLoader.loadJSONFrom(file: "geo", usingClass: self) else {
             XCTFail("a valid JSON file is needed to proceed with the test.")
             return
         }

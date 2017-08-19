@@ -21,7 +21,7 @@ class CompanyTests: XCTestCase {
     
     func test_Init_WithDictionary_All_Properties_Properly() {
         
-        guard let dictCompany = JSONMockLoader.loadJSONFrom(fileWithName: "company", usingClass: self) else {
+        guard let dictCompany = JSONMockLoader.loadJSONFrom(file: "company", usingClass: self) else {
             XCTFail("a valid JSON file is needed to proceed with the test.")
             return
         }
