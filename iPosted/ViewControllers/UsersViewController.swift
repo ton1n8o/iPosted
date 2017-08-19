@@ -33,7 +33,9 @@ class UsersViewController: UIViewController {
         apiClient.loadUsers { (arrayUsers, error) in
             if !(arrayUsers?.isEmpty ?? true) {
                 self.dataProvider.users = arrayUsers
-                self.tableView?.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView?.reloadData()
+                }
             }
         }
     }

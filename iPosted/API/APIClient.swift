@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import WebKit
 
 enum WebserviceError: Error {
     case dataEmptyError
@@ -27,14 +28,18 @@ class APIClient {
             fatalError()
         }
         
-        session.dataTask(with: url) { (data, response, error) in
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        session.dataTask(with: url) { [weak self] (data, response, error)  in
             
             guard error == nil else {
+                self?.turnOffNetworkActivityIndicator()
                 completion(nil, WebserviceError.responseError)
                 return
             }
             
             guard let data = data else {
+                self?.turnOffNetworkActivityIndicator()
                 completion(nil, WebserviceError.dataEmptyError)
                 return
             }
@@ -43,24 +48,31 @@ class APIClient {
             
             do {
                 
-                guard let dict = try JSONSerialization.jsonObject(with: data, options: []) as?
+                guard let dictUsers = try JSONSerialization.jsonObject(with: data, options: []) as?
                     [[String: AnyObject]] else {
                     completion(nil, WebserviceError.jsonResponseNotCompaitble)
                     return
                 }
                 
                 users = [User]()
-                for d in dict {
-                    users?.append(User(dict: d))
+                for dict in dictUsers {
+                    users?.append(User(dict: dict))
                 }
+                
+                self?.turnOffNetworkActivityIndicator()
                 
                 completion(users, nil)
                 
             } catch {
+                self?.turnOffNetworkActivityIndicator()
                 completion(users, error)
             }
             
         }.resume()
+    }
+    
+    fileprivate func turnOffNetworkActivityIndicator() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }
     
 }
