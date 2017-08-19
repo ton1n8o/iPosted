@@ -57,6 +57,15 @@ struct JSONParserHelper {
         return -1
     }
     
+    
+    /// Given a Dictionary **[String: AnyObject]** it tries to extract its content
+    /// with the key provided, in case it is found it tries to cast it to **[String: AnyObject]**
+    /// if it succeeds the casted object is returned, in any other case nil is returned.
+    ///
+    /// - Parameters:
+    ///   - fromDict: a Dictionary as **[String: AnyObject]**
+    ///   - usingkey: a key
+    /// - Returns: an optional Dictionary as **[String: AnyObject]?**
     func stract(fromDict: [String :AnyObject], _ usingkey: String) -> [String :AnyObject]? {
         guard let dict = fromDict[usingkey] as? [String: AnyObject] else {
             return nil

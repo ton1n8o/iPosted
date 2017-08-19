@@ -15,13 +15,22 @@ struct User {
     let userName: String
     let email: String
     let phone: String
+    let address: Address?
+    let website: String
     
     init(dict: [String : AnyObject]) {
         self.id = JSONParserHelper.shared.parseInt(dict["id"])
         self.name = JSONParserHelper.shared.parseString(dict["name"])
         self.userName = JSONParserHelper.shared.parseString(dict["username"])
         self.email = JSONParserHelper.shared.parseString(dict["email"])
-        // TODO: address
+        
+        if let addressDict = JSONParserHelper.shared.stract(fromDict: dict, "address") {
+            self.address = Address(dict: addressDict)
+        } else {
+            self.address = nil
+        }
+         
         self.phone = JSONParserHelper.shared.parseString(dict["phone"])
+        self.website = JSONParserHelper.shared.parseString(dict["website"])
     }
 }

@@ -42,6 +42,8 @@ class GeoTestes: XCTestCase {
         
     }
     
+    // MARK: - Equatable tests
+    
     func test_When_Lat_Differ_ShouldNot_Be_Equal() {
         let geoA = Geo(lat: 35.23626, lng: 81.26955)
         let geoB = Geo(lat: 36.23626, lng: 81.26955)

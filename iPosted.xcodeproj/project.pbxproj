@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		740C54D71F480BFE00A68DC0 /* address_no_geo.json in Resources */ = {isa = PBXBuildFile; fileRef = 740C54D61F480BFE00A68DC0 /* address_no_geo.json */; };
+		740C54D91F480C8D00A68DC0 /* user_no_address.json in Resources */ = {isa = PBXBuildFile; fileRef = 740C54D81F480C8D00A68DC0 /* user_no_address.json */; };
+		740C54DB1F480E5B00A68DC0 /* CompanyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740C54DA1F480E5B00A68DC0 /* CompanyTests.swift */; };
+		740C54DD1F480EE300A68DC0 /* company.json in Resources */ = {isa = PBXBuildFile; fileRef = 740C54DC1F480EE300A68DC0 /* company.json */; };
+		740C54DF1F480F2300A68DC0 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 740C54DE1F480F2300A68DC0 /* Company.swift */; };
 		742DCEB41F47E2A1007EC839 /* JSONParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742DCEB31F47E2A1007EC839 /* JSONParserHelper.swift */; };
 		742DCEB61F47E66F007EC839 /* JSONParserHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742DCEB51F47E66F007EC839 /* JSONParserHelperTests.swift */; };
 		742DCEB91F47ED3D007EC839 /* AddressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742DCEB81F47ED3D007EC839 /* AddressTests.swift */; };
@@ -39,6 +44,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		740C54D61F480BFE00A68DC0 /* address_no_geo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = address_no_geo.json; sourceTree = "<group>"; };
+		740C54D81F480C8D00A68DC0 /* user_no_address.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_no_address.json; sourceTree = "<group>"; };
+		740C54DA1F480E5B00A68DC0 /* CompanyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompanyTests.swift; sourceTree = "<group>"; };
+		740C54DC1F480EE300A68DC0 /* company.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = company.json; sourceTree = "<group>"; };
+		740C54DE1F480F2300A68DC0 /* Company.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
 		742DCEB31F47E2A1007EC839 /* JSONParserHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParserHelper.swift; sourceTree = "<group>"; };
 		742DCEB51F47E66F007EC839 /* JSONParserHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParserHelperTests.swift; sourceTree = "<group>"; };
 		742DCEB81F47ED3D007EC839 /* AddressTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressTests.swift; sourceTree = "<group>"; };
@@ -98,8 +108,11 @@
 			children = (
 				742F85101F47DE670028458F /* JSONMockLoader.swift */,
 				742DCEBC1F47EE96007EC839 /* address.json */,
+				740C54D61F480BFE00A68DC0 /* address_no_geo.json */,
+				740C54DC1F480EE300A68DC0 /* company.json */,
 				742DCEC21F47F14A007EC839 /* geo.json */,
 				742F85131F47DF620028458F /* user.json */,
+				740C54D81F480C8D00A68DC0 /* user_no_address.json */,
 			);
 			path = JSONMock;
 			sourceTree = "<group>";
@@ -181,6 +194,7 @@
 				7434B56D1F47D7F100023FB4 /* UserTests.swift */,
 				742DCEB81F47ED3D007EC839 /* AddressTests.swift */,
 				742DCEBE1F47F07D007EC839 /* GeoTestes.swift */,
+				740C54DA1F480E5B00A68DC0 /* CompanyTests.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -191,6 +205,7 @@
 				74B97BC31F47DBDA003B9ADD /* User.swift */,
 				742DCEBA1F47EDDF007EC839 /* Address.swift */,
 				742DCEC01F47F0F9007EC839 /* Geo.swift */,
+				740C54DE1F480F2300A68DC0 /* Company.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -291,8 +306,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				742DCEBD1F47EE96007EC839 /* address.json in Resources */,
+				740C54DD1F480EE300A68DC0 /* company.json in Resources */,
 				742F85141F47DF620028458F /* user.json in Resources */,
 				742DCEC31F47F14A007EC839 /* geo.json in Resources */,
+				740C54D91F480C8D00A68DC0 /* user_no_address.json in Resources */,
+				740C54D71F480BFE00A68DC0 /* address_no_geo.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,6 +328,7 @@
 				7434B53F1F47CFEF00023FB4 /* AppDelegate.swift in Sources */,
 				7436815F1F47D31B00ADCC59 /* APIClient.swift in Sources */,
 				742DCEC11F47F0F9007EC839 /* Geo.swift in Sources */,
+				740C54DF1F480F2300A68DC0 /* Company.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +341,7 @@
 				7436815C1F47D22100ADCC59 /* APIClientTests.swift in Sources */,
 				742DCEB91F47ED3D007EC839 /* AddressTests.swift in Sources */,
 				742DCEB61F47E66F007EC839 /* JSONParserHelperTests.swift in Sources */,
+				740C54DB1F480E5B00A68DC0 /* CompanyTests.swift in Sources */,
 				742DCEBF1F47F07D007EC839 /* GeoTestes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
