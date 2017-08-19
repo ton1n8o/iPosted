@@ -37,6 +37,11 @@ struct Address : Equatable {
         }
         
     }
+    
+    var description: String {
+        return "\(street), \(suite), \(city) - \(zipcode)"
+    }
+    
 }
 
 extension Address {

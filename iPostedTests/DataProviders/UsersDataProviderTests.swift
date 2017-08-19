@@ -64,9 +64,10 @@ class UsersDataProviderTests: XCTestCase {
     }
     
     func test_CellForRow_DequeuesCell_FromTableView() {
+        
         let mockTableView = MockTableView()
         mockTableView.dataSource = sut
-        mockTableView.register(UserCell.self, forCellReuseIdentifier: "UserCell")
+        mockTableView.register(MockUserCell.self, forCellReuseIdentifier: "UserCell")
         
         sut.users?.append(buildUser())
         mockTableView.reloadData()

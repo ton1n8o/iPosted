@@ -17,7 +17,10 @@ class UserCell : UITableViewCell {
     @IBOutlet var addressLabel: UILabel!
     
     func configCell(with user: User) {
-        
+        nameLabel.text = user.name
+        userNameLabel.text = user.userName
+        emailLabel.text = user.email
+        addressLabel.text = user.address?.description ?? "--"
     }
     
 }

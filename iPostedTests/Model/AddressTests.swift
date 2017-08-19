@@ -72,6 +72,19 @@ class AddressTests: XCTestCase {
         
     }
     
+    func test_AddressDescription_Should_Match_Format() {
+        let address = Address(
+            street: "Kulas Light",
+            suite: "Apt. 556",
+            city: "Gwenborough",
+            zipcode: "92998-3874",
+            geo: nil
+        )
+        let addressDescription = "Kulas Light, Apt. 556, Gwenborough - 92998-3874"
+        
+        XCTAssertEqual(address.description, addressDescription)
+    }
+    
     // MARK: - Equatable tests
     
     func test_When_Street_Differ_ShouldNot_Be_Equal() {
