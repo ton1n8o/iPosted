@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		742DCEB41F47E2A1007EC839 /* JSONParserHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742DCEB31F47E2A1007EC839 /* JSONParserHelper.swift */; };
+		742DCEB61F47E66F007EC839 /* JSONParserHelperTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742DCEB51F47E66F007EC839 /* JSONParserHelperTests.swift */; };
+		742F85111F47DE670028458F /* JSONMockLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 742F85101F47DE670028458F /* JSONMockLoader.swift */; };
+		742F85141F47DF620028458F /* user.json in Resources */ = {isa = PBXBuildFile; fileRef = 742F85131F47DF620028458F /* user.json */; };
 		7434B53F1F47CFEF00023FB4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7434B53E1F47CFEF00023FB4 /* AppDelegate.swift */; };
 		7434B5411F47CFEF00023FB4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7434B5401F47CFEF00023FB4 /* ViewController.swift */; };
 		7434B5441F47CFEF00023FB4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7434B5421F47CFEF00023FB4 /* Main.storyboard */; };
 		7434B5461F47CFEF00023FB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7434B5451F47CFEF00023FB4 /* Assets.xcassets */; };
 		7434B5491F47CFEF00023FB4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7434B5471F47CFEF00023FB4 /* LaunchScreen.storyboard */; };
-		7434B5541F47CFEF00023FB4 /* iPostedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7434B5531F47CFEF00023FB4 /* iPostedTests.swift */; };
 		7434B56E1F47D7F100023FB4 /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7434B56D1F47D7F100023FB4 /* UserTests.swift */; };
 		7436815C1F47D22100ADCC59 /* APIClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7436815B1F47D22100ADCC59 /* APIClientTests.swift */; };
 		7436815F1F47D31B00ADCC59 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7436815E1F47D31B00ADCC59 /* APIClient.swift */; };
+		74B97BC41F47DBDA003B9ADD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B97BC31F47DBDA003B9ADD /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		742DCEB31F47E2A1007EC839 /* JSONParserHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParserHelper.swift; sourceTree = "<group>"; };
+		742DCEB51F47E66F007EC839 /* JSONParserHelperTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParserHelperTests.swift; sourceTree = "<group>"; };
+		742F85101F47DE670028458F /* JSONMockLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSONMockLoader.swift; path = ../../JSONMockLoader.swift; sourceTree = "<group>"; };
+		742F85131F47DF620028458F /* user.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user.json; sourceTree = "<group>"; };
 		7434B53B1F47CFEF00023FB4 /* iPosted.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iPosted.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7434B53E1F47CFEF00023FB4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7434B5401F47CFEF00023FB4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,13 +45,13 @@
 		7434B5481F47CFEF00023FB4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7434B54A1F47CFEF00023FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7434B54F1F47CFEF00023FB4 /* iPostedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iPostedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7434B5531F47CFEF00023FB4 /* iPostedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPostedTests.swift; sourceTree = "<group>"; };
 		7434B5551F47CFEF00023FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7434B55E1F47CFEF00023FB4 /* iPostedUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPostedUITests.swift; sourceTree = "<group>"; };
 		7434B5601F47CFEF00023FB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7434B56D1F47D7F100023FB4 /* UserTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
 		7436815B1F47D22100ADCC59 /* APIClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClientTests.swift; sourceTree = "<group>"; };
 		7436815E1F47D31B00ADCC59 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		74B97BC31F47DBDA003B9ADD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +72,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		742DCEB71F47E8EF007EC839 /* JSONParsing */ = {
+			isa = PBXGroup;
+			children = (
+				742F85121F47DEEB0028458F /* JSONMock */,
+				742DCEB51F47E66F007EC839 /* JSONParserHelperTests.swift */,
+			);
+			path = JSONParsing;
+			sourceTree = "<group>";
+		};
+		742F85121F47DEEB0028458F /* JSONMock */ = {
+			isa = PBXGroup;
+			children = (
+				742F85101F47DE670028458F /* JSONMockLoader.swift */,
+				742F85131F47DF620028458F /* user.json */,
+			);
+			path = JSONMock;
+			sourceTree = "<group>";
+		};
 		7434B5321F47CFEF00023FB4 = {
 			isa = PBXGroup;
 			children = (
@@ -87,12 +113,14 @@
 			isa = PBXGroup;
 			children = (
 				7436815D1F47D2C600ADCC59 /* API */,
+				74B97BC21F47DBAA003B9ADD /* Model */,
 				7434B53E1F47CFEF00023FB4 /* AppDelegate.swift */,
 				7434B5401F47CFEF00023FB4 /* ViewController.swift */,
 				7434B5421F47CFEF00023FB4 /* Main.storyboard */,
 				7434B5451F47CFEF00023FB4 /* Assets.xcassets */,
 				7434B5471F47CFEF00023FB4 /* LaunchScreen.storyboard */,
 				7434B54A1F47CFEF00023FB4 /* Info.plist */,
+				742DCEB31F47E2A1007EC839 /* JSONParserHelper.swift */,
 			);
 			path = iPosted;
 			sourceTree = "<group>";
@@ -100,9 +128,9 @@
 		7434B5521F47CFEF00023FB4 /* iPostedTests */ = {
 			isa = PBXGroup;
 			children = (
-				743681601F47D78B00ADCC59 /* Model */,
 				7434B56C1F47D03400023FB4 /* API */,
-				7434B5531F47CFEF00023FB4 /* iPostedTests.swift */,
+				742DCEB71F47E8EF007EC839 /* JSONParsing */,
+				743681601F47D78B00ADCC59 /* Model */,
 				7434B5551F47CFEF00023FB4 /* Info.plist */,
 			);
 			path = iPostedTests;
@@ -137,6 +165,14 @@
 			isa = PBXGroup;
 			children = (
 				7434B56D1F47D7F100023FB4 /* UserTests.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		74B97BC21F47DBAA003B9ADD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				74B97BC31F47DBDA003B9ADD /* User.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -236,6 +272,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				742F85141F47DF620028458F /* user.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,6 +283,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74B97BC41F47DBDA003B9ADD /* User.swift in Sources */,
+				742DCEB41F47E2A1007EC839 /* JSONParserHelper.swift in Sources */,
 				7434B5411F47CFEF00023FB4 /* ViewController.swift in Sources */,
 				7434B53F1F47CFEF00023FB4 /* AppDelegate.swift in Sources */,
 				7436815F1F47D31B00ADCC59 /* APIClient.swift in Sources */,
@@ -257,8 +296,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7434B56E1F47D7F100023FB4 /* UserTests.swift in Sources */,
-				7434B5541F47CFEF00023FB4 /* iPostedTests.swift in Sources */,
+				742F85111F47DE670028458F /* JSONMockLoader.swift in Sources */,
 				7436815C1F47D22100ADCC59 /* APIClientTests.swift in Sources */,
+				742DCEB61F47E66F007EC839 /* JSONParserHelperTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,29 +7,30 @@
 //
 
 import XCTest
+@testable import iPosted
 
 class UserTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func test_Init_Sets_All_Properties_Properly() {
+        
+        guard let dictUser = JSONMockLoader.loadJSONFrom(fileWithName: "user", usingClass: self) else {
+            XCTFail("a valid JSON file is needed to proceed with the test.")
+            return
         }
+        
+        let user = User(dict: dictUser)
+        
+        XCTAssertEqual(user.id, 1)
+        XCTAssertEqual(user.name, "Leanne Graham")
+        XCTAssertEqual(user.userName, "Bret")
     }
     
 }
