@@ -25,6 +25,7 @@ struct Geo : Equatable {
 }
 
 extension Geo {
+    
     static func ==(rhs: Geo, lhs: Geo) -> Bool {
         if rhs.lat != lhs.lat {
             return false

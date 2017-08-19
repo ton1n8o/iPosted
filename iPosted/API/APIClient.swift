@@ -12,6 +12,17 @@ class APIClient {
     
     lazy var session: SessionProtocol = URLSession.shared
     
+    func loadUsers(completion: @escaping ([User]?, Error?) -> Void) {
+        
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else {
+            fatalError()
+        }
+        
+        session.dataTask(with: url) { (data, response, error) in
+            
+        }
+    }
+    
 }
 
 protocol SessionProtocol {

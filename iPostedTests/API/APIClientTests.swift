@@ -24,7 +24,19 @@ class APIClientTests: XCTestCase {
         let mockURLSession = MockURLSession()
         sut.session = mockURLSession
         
-        // sut.loadUsers()
+        let completion = { (users: [User]?, error: Error?) in }
+        
+        sut.loadUsers(completion: completion)
+        
+        guard let url = mockURLSession.url else {
+            XCTFail()
+            return
+        }
+        
+        let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        
+        XCTAssertEqual(urlComponents?.host, "jsonplaceholder.typicode.com")
+        XCTAssertEqual(urlComponents?.path, "/users")
         
     }
     
