@@ -60,7 +60,6 @@ class APIClient {
                 }
                 
                 self?.turnOffNetworkActivityIndicator()
-                
                 completion(users, nil)
                 
             } catch {
@@ -78,9 +77,46 @@ class APIClient {
             fatalError()
         }
         
-        session.dataTask(with: url) { (data, response, error) in
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        session.dataTask(with: url) { [weak self] (data, response, error) in
             
-        }
+            guard error == nil else {
+                self?.turnOffNetworkActivityIndicator()
+                completion(nil, WebserviceError.responseError)
+                return
+            }
+            
+            guard let data = data else {
+                self?.turnOffNetworkActivityIndicator()
+                completion(nil, WebserviceError.dataEmptyError)
+                return
+            }
+            
+            var posts: [Post]? = nil
+            
+            do {
+                
+                guard let dictPosts = try JSONSerialization.jsonObject(with: data, options: []) as?
+                    [[String: AnyObject]] else {
+                        completion(nil, WebserviceError.jsonResponseNotCompaitble)
+                        return
+                }
+                
+                posts = [Post]()
+                for dict in dictPosts {
+                    posts?.append(Post(dict: dict))
+                }
+                
+                self?.turnOffNetworkActivityIndicator()
+                completion(posts, nil)
+                
+            } catch {
+                self?.turnOffNetworkActivityIndicator()
+                completion(nil, error)
+            }
+            
+        }.resume()
         
     }
     

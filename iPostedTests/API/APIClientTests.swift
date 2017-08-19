@@ -188,6 +188,123 @@ class APIClientTests: XCTestCase {
     
     // MARK: - Posts endpoint tests
     
+    func test_LoadPosts_WhenSuccessfull_Returns_Posts() {
+        
+        guard let jsonData = JSONMockLoader.loadJSONData(file: "posts_array", usingClass: self) else {
+            XCTFail("a valid JSON file is needed to proceed with the test.")
+            return
+        }
+        
+        let sut = APIClient()
+        let mockURLSession = MockURLSession(data: jsonData, urlResponse: nil, error: nil)
+        
+        sut.session = mockURLSession
+        
+        let postsExpectation = expectation(description: "Posts")
+        
+        var posts: [Post]? = nil
+        
+        sut.loadPosts(userId: 1, completion: { (postsFetched, error) in
+            posts = postsFetched
+            postsExpectation.fulfill()
+        })
+        
+        waitForExpectations(timeout: 1) { (error) in
+            XCTAssertEqual(posts?.count, 2)
+        }
+    }
+    
+    func test_LoadPosts_WhenJSONInvalid_Returns_Error() {
+        
+        let sut = APIClient()
+        let mockURLSession = MockURLSession(data: Data(), urlResponse: nil, error: nil)
+        sut.session = mockURLSession
+        
+        let postsExpectation = expectation(description: "Error")
+        
+        var catchedError: Error? = nil
+        
+        sut.loadPosts(userId: 1, completion: { (postsFetched, error) in
+            catchedError = error
+            postsExpectation.fulfill()
+        })
+        
+        waitForExpectations(timeout: 1) { (error) in
+            XCTAssertNotNil(catchedError)
+        }
+        
+    }
+    
+    func test_LoadPosts_WhenJSON_NotCompatible_Returns_Error() {
+        
+        let sut = APIClient()
+        let jsonData = "{\"userName\": \"Jhon\"}".data(using: .utf8)
+        let mockURLSession = MockURLSession(data: jsonData, urlResponse: nil, error: nil)
+        sut.session = mockURLSession
+        
+        let errorExpectation = expectation(description: "Error")
+        
+        var catchedError: Error? = nil
+        
+        sut.loadPosts(userId: 1, completion: { (postsFetched, error) in
+            catchedError = error
+            errorExpectation.fulfill()
+        })
+        
+        waitForExpectations(timeout: 1) { (error) in
+            XCTAssertNotNil(catchedError)
+        }
+        
+    }
+    
+    func test_LoadPosts_WhenDataIs_Nil_Returns_Error() {
+        
+        let sut = APIClient()
+        let mockURLSession = MockURLSession(data: nil, urlResponse: nil, error: nil)
+        sut.session = mockURLSession
+        
+        let errorExpectation = expectation(description: "Error")
+        
+        var catchedError: Error? = nil
+        
+        sut.loadPosts(userId: 1, completion: { (postsFetched, error) in
+            catchedError = error
+            errorExpectation.fulfill()
+        })
+        
+        waitForExpectations(timeout: 1) { (error) in
+            XCTAssertNotNil(catchedError)
+        }
+    }
+    
+    func test_LoadPosts_WhenResponseHas_Error_Returns_Error() {
+        
+        guard let jsonData = JSONMockLoader.loadJSONData(file: "posts_array", usingClass: self) else {
+            XCTFail("a valid JSON file is needed to proceed with the test.")
+            return
+        }
+        
+        let sut = APIClient()
+        let error = NSError(domain: "An Error", code: 123, userInfo: nil)
+        
+        let mockURLSession = MockURLSession(data: jsonData, urlResponse: nil, error: error)
+        sut.session = mockURLSession
+        
+        let errorExpectation = expectation(description: "Error")
+        
+        var catchedError: Error? = nil
+        
+        sut.loadPosts(userId: 1, completion: { (postsFetched, error) in
+            catchedError = error
+            errorExpectation.fulfill()
+        })
+        
+        waitForExpectations(timeout: 1) { (error) in
+            XCTAssertNotNil(catchedError)
+        }
+        
+    }
+    
 }
 
 extension APIClientTests {
