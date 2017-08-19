@@ -71,6 +71,19 @@ class APIClient {
         }.resume()
     }
     
+    func loadPosts(userId: Int, completion: @escaping ([Post]?, Error?) -> Void) {
+        
+        let urlPosts = "\(APIEndpoints.POSTS)?userId=\(userId)"
+        guard let url = URL(string: urlPosts) else {
+            fatalError()
+        }
+        
+        session.dataTask(with: url) { (data, response, error) in
+            
+        }
+        
+    }
+    
     fileprivate func turnOffNetworkActivityIndicator() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = false
     }

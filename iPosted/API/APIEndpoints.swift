@@ -14,4 +14,5 @@ struct APIEndpoints {
     
     public static let BASE = "https://jsonplaceholder.typicode.com"
     public static let USERS = "\(BASE)/users"
+    public static let POSTS = "\(BASE)/posts"
 }

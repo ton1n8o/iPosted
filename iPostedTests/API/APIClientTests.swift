@@ -19,7 +19,9 @@ class APIClientTests: XCTestCase {
         super.tearDown()
     }
     
-    func test_ApiClient_Uses_Proper_EndPoint() {
+    // MARK: - Endpoints tests
+    
+    func test_ApiClient_LoadUser_Should_Use_Proper_Endpoint() {
         let sut = APIClient()
         let mockURLSession = MockURLSession(data: nil, urlResponse: nil, error: nil)
         sut.session = mockURLSession
@@ -29,7 +31,7 @@ class APIClientTests: XCTestCase {
         sut.loadUsers(completion: completion)
         
         guard let url = mockURLSession.url else {
-            XCTFail()
+            XCTFail("URL not provided to the dataTask() method")
             return
         }
         
@@ -39,6 +41,32 @@ class APIClientTests: XCTestCase {
         XCTAssertEqual(urlComponents?.path, "/users")
         
     }
+    
+    func test_ApiClient_LoadPosts_Should_Use_Proper_Endpoint() {
+        let sut = APIClient()
+        let mockURLSession = MockURLSession(data: nil, urlResponse: nil, error: nil)
+        sut.session = mockURLSession
+        
+        let completion = { (users: [Post]?, error: Error?) in }
+        
+        let userId = 1
+        sut.loadPosts(userId: userId, completion: completion)
+        
+        guard let url = mockURLSession.url else {
+            XCTFail("URL not provided to the dataTask() method")
+            return
+        }
+        
+        let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        let qiUserId = URLQueryItem(name: "userId", value: "\(userId)")
+        
+        XCTAssertEqual(urlComponents?.host, "jsonplaceholder.typicode.com")
+        XCTAssertEqual(urlComponents?.path, "/posts")
+        XCTAssertTrue(urlComponents?.queryItems?.contains(qiUserId) ?? false, "the URL must contain userId property.")
+        
+    }
+    
+    // MARK: - LoadUser endpoint tests
     
     func test_LoadUsers_WhenSuccessfull_Returns_Users() {
         
@@ -157,6 +185,8 @@ class APIClientTests: XCTestCase {
         }
         
     }
+    
+    // MARK: - Posts endpoint tests
     
 }
 
