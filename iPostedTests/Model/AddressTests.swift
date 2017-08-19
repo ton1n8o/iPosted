@@ -19,7 +19,7 @@ class AddressTests: XCTestCase {
         super.tearDown()
     }
     
-    func test_Init_WithDictionary_Sets_All_Properties_Properly() {
+    func test_Init_WithDictionary_Sets_All_Properties() {
         
         guard let dictAddress = JSONMockLoader.loadJSONFrom(fileWithName: "address", usingClass: self) else {
             XCTFail("a valid JSON file is needed to proceed with the test.")

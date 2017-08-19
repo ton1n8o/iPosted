@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Company {
+struct Company : Equatable {
     
     let name: String
     let catchPhrase: String
@@ -26,4 +26,20 @@ struct Company {
         self.bs = JSONParserHelper.shared.parseString(dict["bs"])
     }
     
+}
+
+extension Company {
+    
+    static func ==(rhs: Company, lhs: Company) -> Bool {
+        if rhs.name != lhs.name {
+            return false
+        }
+        if rhs.catchPhrase != lhs.catchPhrase {
+            return false
+        }
+        if rhs.bs != lhs.bs {
+            return false
+        }
+        return true
+    }
 }

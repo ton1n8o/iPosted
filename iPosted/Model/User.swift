@@ -14,9 +14,10 @@ struct User {
     let name: String
     let userName: String
     let email: String
-    let phone: String
     let address: Address?
+    let phone: String
     let website: String
+    let company: Company?
     
     init(dict: [String : AnyObject]) {
         self.id = JSONParserHelper.shared.parseInt(dict["id"])
@@ -32,5 +33,11 @@ struct User {
          
         self.phone = JSONParserHelper.shared.parseString(dict["phone"])
         self.website = JSONParserHelper.shared.parseString(dict["website"])
+        
+        if let companyDict = JSONParserHelper.shared.stract(fromDict: dict, "company") {
+            self.company = Company(dict: companyDict)
+        } else {
+            self.company = nil
+        }
     }
 }

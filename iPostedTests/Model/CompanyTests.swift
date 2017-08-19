@@ -45,4 +45,27 @@ class CompanyTests: XCTestCase {
         XCTAssertEqual(company.bs, "my bs")
     }
     
+    // MARK: - Equatable tests
+    
+    func test_When_Name_Differ_ShouldNot_Be_Equal() {
+        let companyA = Company(name: "Foo", catchPhrase: "", bs: "")
+        let companyB = Company(name: "Boo", catchPhrase: "", bs: "")
+        
+        XCTAssertNotEqual(companyA, companyB)
+    }
+    
+    func test_When_CatchPhrase_Differ_ShouldNot_Be_Equal() {
+        let companyA = Company(name: "", catchPhrase: "Foo", bs: "")
+        let companyB = Company(name: "", catchPhrase: "Bar", bs: "")
+        
+        XCTAssertNotEqual(companyA, companyB)
+    }
+    
+    func test_When_Bs_Differ_ShouldNot_Be_Equal() {
+        let companyA = Company(name: "", catchPhrase: "", bs: "Foo")
+        let companyB = Company(name: "", catchPhrase: "", bs: "Bar")
+        
+        XCTAssertNotEqual(companyA, companyB)
+    }
+    
 }
