@@ -19,12 +19,15 @@ struct JSONParserHelper {
     /// int value is returned otherwise **-1**.
     ///
     /// - Parameter num: AnyObjecto to be converted to Int.
-    /// - Returns: a converted int or -1 value.
+    /// - Returns: a converted int or **-1 value**.
     func parseInt(_ num: AnyObject?) -> Int {
-        guard let num = num as? Int else {
-            return -1
+        if let num = num as? Int {
+            return num
         }
-        return num
+        if let num = num as? String, let intValue = Int(num) {
+            return intValue
+        }
+        return -1
     }
     
     /// Given an **AnyObject** it tries to cast it to String, in case it works the
@@ -37,6 +40,28 @@ struct JSONParserHelper {
             return ""
         }
         return str
+    }
+    
+    /// Given an **AnyObject** it tries to cast it to Double, in case it works the
+    /// double value is returned otherwise -1.
+    ///
+    /// - Parameter dbl: AnyObjecto to be converted to Double.
+    /// - Returns: a converted double or **-1 value**.
+    func parseDouble(_ dbl: AnyObject?) -> Double {
+        if let dbl = dbl as? Double {
+            return dbl
+        }
+        if let dbl = dbl as? String, let doubleValue = Double(dbl) {
+            return doubleValue
+        }
+        return -1
+    }
+    
+    func stract(fromDict: [String :AnyObject], _ usingkey: String) -> [String :AnyObject]? {
+        guard let dict = fromDict[usingkey] as? [String: AnyObject] else {
+            return nil
+        }
+        return dict
     }
     
 }
