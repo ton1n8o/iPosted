@@ -11,12 +11,14 @@ import UIKit
 
 class UsersDataProvider : NSObject, UITableViewDataSource, UITableViewDelegate {
     
+    var users: [User]?
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
-        return 0
+        return users?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        return tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
     }
 
     
