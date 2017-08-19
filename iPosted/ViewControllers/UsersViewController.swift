@@ -10,12 +10,13 @@ import UIKit
 
 class UsersViewController: UIViewController {
     
-    var tableView: UITableView?
+    @IBOutlet var tableView: UITableView?
+    @IBOutlet var dataProvider: UsersDataProvider!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        tableView = UITableView()
+        tableView?.dataSource = dataProvider
+        tableView?.delegate = dataProvider
     }
 
     override func didReceiveMemoryWarning() {

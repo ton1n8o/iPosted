@@ -34,6 +34,8 @@
 		7436981E1F48242E00753778 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7436981D1F48242E00753778 /* APIEndpoints.swift */; };
 		743698201F482DC900753778 /* users_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 7436981F1F482DC900753778 /* users_array.json */; };
 		7458C6B91F484DFF00919EE4 /* StoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7458C6B81F484DFF00919EE4 /* StoryboardTests.swift */; };
+		74858EFB1F4859E300E4CE98 /* UsersDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858EFA1F4859E300E4CE98 /* UsersDataProviderTests.swift */; };
+		74B01EB71F48557B00F9FA5C /* UsersDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B01EB61F48557B00F9FA5C /* UsersDataProvider.swift */; };
 		74B97BC41F47DBDA003B9ADD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B97BC31F47DBDA003B9ADD /* User.swift */; };
 		74EDAE481F4850F30095AEA3 /* UsersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDAE471F4850F30095AEA3 /* UsersViewControllerTests.swift */; };
 /* End PBXBuildFile section */
@@ -82,6 +84,8 @@
 		7436981D1F48242E00753778 /* APIEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
 		7436981F1F482DC900753778 /* users_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users_array.json; sourceTree = "<group>"; };
 		7458C6B81F484DFF00919EE4 /* StoryboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardTests.swift; sourceTree = "<group>"; };
+		74858EFA1F4859E300E4CE98 /* UsersDataProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersDataProviderTests.swift; sourceTree = "<group>"; };
+		74B01EB61F48557B00F9FA5C /* UsersDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersDataProvider.swift; sourceTree = "<group>"; };
 		74B97BC31F47DBDA003B9ADD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		74EDAE471F4850F30095AEA3 /* UsersViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,15 +155,15 @@
 		7434B53D1F47CFEF00023FB4 /* iPosted */ = {
 			isa = PBXGroup;
 			children = (
-				7458C6BA1F48503200919EE4 /* ViewControllers */,
-				7436815D1F47D2C600ADCC59 /* API */,
-				74B97BC21F47DBAA003B9ADD /* Model */,
 				7434B53E1F47CFEF00023FB4 /* AppDelegate.swift */,
+				7436815D1F47D2C600ADCC59 /* API */,
+				74B01EB51F4854FC00F9FA5C /* DataProviders */,
+				74B97BC21F47DBAA003B9ADD /* Model */,
+				7458C6BA1F48503200919EE4 /* ViewControllers */,
 				7434B5421F47CFEF00023FB4 /* Main.storyboard */,
 				7434B5451F47CFEF00023FB4 /* Assets.xcassets */,
 				7434B5471F47CFEF00023FB4 /* LaunchScreen.storyboard */,
 				7434B54A1F47CFEF00023FB4 /* Info.plist */,
-				742DCEB31F47E2A1007EC839 /* JSONParserHelper.swift */,
 			);
 			path = iPosted;
 			sourceTree = "<group>";
@@ -167,6 +171,7 @@
 		7434B5521F47CFEF00023FB4 /* iPostedTests */ = {
 			isa = PBXGroup;
 			children = (
+				74858EF91F4859B000E4CE98 /* DataProviders */,
 				74EDAE461F4850B90095AEA3 /* ViewControllers */,
 				7458C6B71F484DB000919EE4 /* Storyboards */,
 				7434B56C1F47D03400023FB4 /* API */,
@@ -199,6 +204,7 @@
 			children = (
 				7436815E1F47D31B00ADCC59 /* APIClient.swift */,
 				7436981D1F48242E00753778 /* APIEndpoints.swift */,
+				742DCEB31F47E2A1007EC839 /* JSONParserHelper.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -228,6 +234,22 @@
 				7434B5401F47CFEF00023FB4 /* UsersViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		74858EF91F4859B000E4CE98 /* DataProviders */ = {
+			isa = PBXGroup;
+			children = (
+				74858EFA1F4859E300E4CE98 /* UsersDataProviderTests.swift */,
+			);
+			path = DataProviders;
+			sourceTree = "<group>";
+		};
+		74B01EB51F4854FC00F9FA5C /* DataProviders */ = {
+			isa = PBXGroup;
+			children = (
+				74B01EB61F48557B00F9FA5C /* UsersDataProvider.swift */,
+			);
+			path = DataProviders;
 			sourceTree = "<group>";
 		};
 		74B97BC21F47DBAA003B9ADD /* Model */ = {
@@ -365,6 +387,7 @@
 				742DCEBB1F47EDDF007EC839 /* Address.swift in Sources */,
 				74B97BC41F47DBDA003B9ADD /* User.swift in Sources */,
 				742DCEB41F47E2A1007EC839 /* JSONParserHelper.swift in Sources */,
+				74B01EB71F48557B00F9FA5C /* UsersDataProvider.swift in Sources */,
 				7436981E1F48242E00753778 /* APIEndpoints.swift in Sources */,
 				7434B5411F47CFEF00023FB4 /* UsersViewController.swift in Sources */,
 				7434B53F1F47CFEF00023FB4 /* AppDelegate.swift in Sources */,
@@ -381,6 +404,7 @@
 				74EDAE481F4850F30095AEA3 /* UsersViewControllerTests.swift in Sources */,
 				7434B56E1F47D7F100023FB4 /* UserTests.swift in Sources */,
 				742F85111F47DE670028458F /* JSONMockLoader.swift in Sources */,
+				74858EFB1F4859E300E4CE98 /* UsersDataProviderTests.swift in Sources */,
 				7436815C1F47D22100ADCC59 /* APIClientTests.swift in Sources */,
 				742DCEB91F47ED3D007EC839 /* AddressTests.swift in Sources */,
 				7458C6B91F484DFF00919EE4 /* StoryboardTests.swift in Sources */,
