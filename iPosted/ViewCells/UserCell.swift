@@ -11,4 +11,8 @@ import UIKit
 
 class UserCell : UITableViewCell {
     
+    func configCell(with user: User) {
+        
+    }
+    
 }

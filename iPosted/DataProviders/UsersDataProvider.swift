@@ -18,7 +18,11 @@ class UsersDataProvider : NSObject, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
+        if let user = users?[indexPath.row] {
+            cell.configCell(with: user)
+        }
+        return cell
     }
 
     

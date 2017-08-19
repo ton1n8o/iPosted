@@ -40,22 +40,13 @@ class UsersDataProviderTests: XCTestCase {
     }
     
     func test_NumberOf_Rows_In_Section_IsEqual_UsersCount() {
-        guard let dictUserA = JSONMockLoader.loadJSONFrom(file: "user", usingClass: self) else {
-            XCTFail("a valid JSON file is needed to proceed with the test.")
-            return
-        }
         
-        guard let dictUserB = JSONMockLoader.loadJSONFrom(file: "user", usingClass: self) else {
-            XCTFail("a valid JSON file is needed to proceed with the test.")
-            return
-        }
-        
-        sut.users?.append(User(dict: dictUserA))
+        sut.users?.append(buildUser())
         
         var numberOfSections = tableView.numberOfRows(inSection: 0)
         XCTAssertEqual(numberOfSections, 1)
         
-        sut.users?.append(User(dict: dictUserB))
+        sut.users?.append(buildUser())
         tableView.reloadData()
         
         numberOfSections = tableView.numberOfRows(inSection: 0)
@@ -64,12 +55,7 @@ class UsersDataProviderTests: XCTestCase {
     
     func test_CellForRow_Returns_UsersCell() {
         
-        guard let dictUser = JSONMockLoader.loadJSONFrom(file: "user", usingClass: self) else {
-            XCTFail("a valid JSON file is needed to proceed with the test.")
-            return
-        }
-        
-        sut.users?.append(User(dict: dictUser))
+        sut.users?.append(buildUser())
         tableView.reloadData()
         
         let cell = tableView.cellForRow(at: IndexPath.init(row: 0, section: 0))
@@ -82,17 +68,56 @@ class UsersDataProviderTests: XCTestCase {
         mockTableView.dataSource = sut
         mockTableView.register(UserCell.self, forCellReuseIdentifier: "UserCell")
         
-        guard let dictUser = JSONMockLoader.loadJSONFrom(file: "user", usingClass: self) else {
-            XCTFail("a valid JSON file is needed to proceed with the test.")
-            return
-        }
-        
-        sut.users?.append(User(dict: dictUser))
+        sut.users?.append(buildUser())
         mockTableView.reloadData()
         
         _ = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0))
         
         XCTAssertTrue(mockTableView.cellGotDequeued)
+    }
+    
+    func test_CellForRow_Calls_ConfigCell() {
+        let mockTableView = MockTableView()
+        mockTableView.dataSource = sut
+        mockTableView.register(MockUserCell.self, forCellReuseIdentifier: "UserCell")
+        
+        let user = buildUser()
+        sut.users?.append(user)
+        mockTableView.reloadData()
+        
+        let cell = mockTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! MockUserCell
+        
+        XCTAssertEqual(cell.catcheUser, user)
+    }
+    
+    // MARK: - Helpers
+    
+    func buildUser() -> User {
+        
+        let address = Address(
+            street: "Kulas Light",
+            suite: "Apt. 556",
+            city: "Gwenborough",
+            zipcode: "92998-3874",
+            geo: Geo(lat: -37.3159, lng: 81.1496)
+        )
+        let company = Company(
+            name: "Romaguera-Crona",
+            catchPhrase: "Multi-layered client-server neural-net",
+            bs: "harness real-time e-markets"
+        )
+        
+        return User(
+            id: 1,
+            name: "Leanne Graham",
+            userName: "Bret",
+            email: "Sincere@april.biz",
+            address: address,
+            phone: "1-770-736-8031 x56442",
+            website: "hildegard.org",
+            company: company
+        )
+        
     }
     
 }
@@ -105,6 +130,14 @@ extension UsersDataProviderTests {
         override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
             cellGotDequeued = true
             return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
+        }
+    }
+    
+    class MockUserCell : UserCell {
+        var catcheUser: User?
+        
+        override func configCell(with user: User) {
+            catcheUser = user
         }
     }
 }
