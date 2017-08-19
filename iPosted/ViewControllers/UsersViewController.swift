@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  UsersViewController.swift
 //  iPosted
 //
 //  Created by Antonio da Silva on 19/08/2017.
@@ -8,11 +8,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class UsersViewController: UIViewController {
+    
+    var tableView: UITableView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        tableView = UITableView()
     }
 
     override func didReceiveMemoryWarning() {
