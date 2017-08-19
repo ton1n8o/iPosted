@@ -1,0 +1,69 @@
+//
+//  UserCellTests.swift
+//  iPosted
+//
+//  Created by Antonio da Silva on 19/08/2017.
+//  Copyright © 2017 TNTStudios. All rights reserved.
+//
+
+import XCTest
+@testable import iPosted
+
+class UserCellTests: XCTestCase {
+    
+    var tableView: UITableView!
+    let dataSource = FakeDataSource()
+    var cell: UserCell!
+    
+    override func setUp() {
+        super.setUp()
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewController = storyboard
+            .instantiateViewController(withIdentifier: "UsersViewController") as! UsersViewController
+        
+        _ = viewController.view
+        
+        tableView = viewController.tableView
+        tableView?.dataSource = dataSource
+        
+        let indexPath = IndexPath(row: 0, section: 0)
+        cell = tableView?
+            .dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserCell
+    }
+    
+    override func tearDown() {
+        super.tearDown()
+    }
+    
+    func test_Has_Name_Label() {
+        XCTAssertNotNil(cell.nameLabel)
+    }
+    
+    func test_Has_UserName_Label() {
+        XCTAssertNotNil(cell.userNameLabel)
+    }
+    
+    func test_Has_Email_Label() {
+        XCTAssertNotNil(cell.emailLabel)
+    }
+    
+    func test_Has_Address_Label() {
+        XCTAssertNotNil(cell.addressLabel)
+    }
+    
+}
+
+extension UserCellTests {
+    
+    class FakeDataSource: NSObject, UITableViewDataSource {
+        
+        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+            return 1
+        }
+        
+        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            return UITableViewCell()
+        }
+    }
+}

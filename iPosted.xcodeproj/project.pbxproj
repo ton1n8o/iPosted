@@ -39,6 +39,7 @@
 		74B01EB71F48557B00F9FA5C /* UsersDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B01EB61F48557B00F9FA5C /* UsersDataProvider.swift */; };
 		74B97BC41F47DBDA003B9ADD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B97BC31F47DBDA003B9ADD /* User.swift */; };
 		74EDAE481F4850F30095AEA3 /* UsersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDAE471F4850F30095AEA3 /* UsersViewControllerTests.swift */; };
+		74F9515D1F487F670082C966 /* UserCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9515C1F487F670082C966 /* UserCellTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		74B01EB61F48557B00F9FA5C /* UsersDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersDataProvider.swift; sourceTree = "<group>"; };
 		74B97BC31F47DBDA003B9ADD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		74EDAE471F4850F30095AEA3 /* UsersViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewControllerTests.swift; sourceTree = "<group>"; };
+		74F9515C1F487F670082C966 /* UserCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 				7434B56C1F47D03400023FB4 /* API */,
 				742DCEB71F47E8EF007EC839 /* JSONParsing */,
 				743681601F47D78B00ADCC59 /* Model */,
+				74F9515B1F487F400082C966 /* ViewCells */,
 				7434B5551F47CFEF00023FB4 /* Info.plist */,
 			);
 			path = iPostedTests;
@@ -280,6 +283,14 @@
 				74EDAE471F4850F30095AEA3 /* UsersViewControllerTests.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		74F9515B1F487F400082C966 /* ViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				74F9515C1F487F670082C966 /* UserCellTests.swift */,
+			);
+			path = ViewCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,6 +428,7 @@
 				7434B56E1F47D7F100023FB4 /* UserTests.swift in Sources */,
 				742F85111F47DE670028458F /* JSONMockLoader.swift in Sources */,
 				74858EFB1F4859E300E4CE98 /* UsersDataProviderTests.swift in Sources */,
+				74F9515D1F487F670082C966 /* UserCellTests.swift in Sources */,
 				7436815C1F47D22100ADCC59 /* APIClientTests.swift in Sources */,
 				742DCEB91F47ED3D007EC839 /* AddressTests.swift in Sources */,
 				7458C6B91F484DFF00919EE4 /* StoryboardTests.swift in Sources */,

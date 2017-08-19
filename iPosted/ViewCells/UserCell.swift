@@ -11,6 +11,11 @@ import UIKit
 
 class UserCell : UITableViewCell {
     
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var userNameLabel: UILabel!
+    @IBOutlet var emailLabel: UILabel!
+    @IBOutlet var addressLabel: UILabel!
+    
     func configCell(with user: User) {
         
     }
