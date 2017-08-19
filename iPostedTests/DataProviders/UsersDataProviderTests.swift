@@ -132,6 +132,7 @@ extension UsersDataProviderTests {
             cellGotDequeued = true
             return super.dequeueReusableCell(withIdentifier: identifier, for: indexPath)
         }
+        
     }
     
     class MockUserCell : UserCell {
