@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UsersViewController: UIViewController {
+class UsersViewController: UIViewController, DidSelectUserDelegate {
     
     // MARK: - IBOutlets
     
@@ -20,7 +20,7 @@ class UsersViewController: UIViewController {
     lazy var apiClient = APIClient()
     
     // MARK: - UIViewController lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView?.dataSource = dataProvider
@@ -40,10 +40,25 @@ class UsersViewController: UIViewController {
         }
     }
     
+    // MARK: - DidSelectUserDelegate
+    
+    func didSelectUser(atIndex: Int) {
+        
+        if let nextViewController = storyboard?.instantiateViewController(
+            withIdentifier: "PostsViewController") as? PostsViewController {
+             nextViewController.user = dataProvider.users?[atIndex]
+            
+            // present PostsViewController
+            navigationController?.pushViewController(nextViewController, animated: true)
+        }
+        
+    }
+    
+    // MARK: - Memory
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
-
+    
 }
 

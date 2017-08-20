@@ -64,6 +64,62 @@ class UsersViewControllerTests: XCTestCase {
         XCTAssertEqual(mockAPI.loadUserGotCalledOnce, 1)
     }
     
+    func test_User_Selected_Show_UserPosts_ViewController() {
+        let mockNavigationController = MockNavigationController(rootViewController: sut)
+        UIApplication.shared.keyWindow?.rootViewController = mockNavigationController
+        
+        sut.dataProvider.delegate = sut
+        sut.dataProvider.users = [buildUser()]
+        sut.tableView?.reloadData()
+        
+        _ = sut.view
+        
+        let indexPath = IndexPath(row: 0, section: 0)
+        sut.tableView?.delegate?.tableView!(sut.tableView!, didSelectRowAt: indexPath)
+        
+        guard let postsViewController = mockNavigationController.pushedViewController as? PostsViewController else {
+            XCTFail("once a user is selected, PostsViewController must be presented"); return
+        }
+        
+        guard let userSelected = postsViewController.user else {
+            XCTFail("a user must be sent to the PostViewController once selected"); return
+        }
+        
+        _ = postsViewController.view
+        
+        XCTAssertEqual(postsViewController.user, userSelected)
+    }
+    
+    // MARK: - Helpers
+    
+    func buildUser() -> User {
+        
+        let address = Address(
+            street: "Kulas Light",
+            suite: "Apt. 556",
+            city: "Gwenborough",
+            zipcode: "92998-3874",
+            geo: Geo(lat: -37.3159, lng: 81.1496)
+        )
+        let company = Company(
+            name: "Romaguera-Crona",
+            catchPhrase: "Multi-layered client-server neural-net",
+            bs: "harness real-time e-markets"
+        )
+        
+        return User(
+            id: 1,
+            name: "Leanne Graham",
+            userName: "Bret",
+            email: "Sincere@april.biz",
+            address: address,
+            phone: "1-770-736-8031 x56442",
+            website: "hildegard.org",
+            company: company
+        )
+        
+    }
+    
 }
 
 extension UsersViewControllerTests {
@@ -74,12 +130,21 @@ extension UsersViewControllerTests {
         override func reloadData() {
             realodDataGotCalled += 1
         }
+        
     }
     
     class MockAPIClient : APIClient {
         var loadUserGotCalledOnce = 0
         override func loadUsers(completion: @escaping ([User]?, Error?) -> Void) {
             loadUserGotCalledOnce += 1
+        }
+    }
+    
+    class MockNavigationController: UINavigationController {
+        var pushedViewController: UIViewController?
+        override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+            pushedViewController = viewController
+            super.pushViewController(viewController, animated: animated)
         }
     }
 }

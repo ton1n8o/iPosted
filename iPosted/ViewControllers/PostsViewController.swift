@@ -9,6 +9,12 @@
 import UIKit
 
 class PostsViewController: UIViewController {
+    
+    // MARK: - Variables
+    
+    var user: User?
+    
+    // MARK: - UIViewController lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
