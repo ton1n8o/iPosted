@@ -54,10 +54,4 @@ class PostsViewController: UIViewController {
         }
     }
     
-    // MARK: - Memory
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
 }

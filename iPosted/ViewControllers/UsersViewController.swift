@@ -42,21 +42,15 @@ class UsersViewController: UIViewController, DidSelectUserDelegate {
     // MARK: - DidSelectUserDelegate
     
     func didSelectUser(atIndex: Int) {
-        
-        if let nextViewController = storyboard?.instantiateViewController(
-            withIdentifier: "PostsViewController") as? PostsViewController {
-            nextViewController.user = dataProvider.users?[atIndex]
-            
-            // present PostsViewController
-            navigationController?.pushViewController(nextViewController, animated: true)
-        }
-        
+        performSegue(withIdentifier: "ShowUserPosts", sender: dataProvider.users?[atIndex])
     }
     
-    // MARK: - Memory
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let postsViewController = segue.destination as? PostsViewController {
+            if let userSelected = sender as? User {
+                postsViewController.user = userSelected
+            }
+        }
     }
     
 }

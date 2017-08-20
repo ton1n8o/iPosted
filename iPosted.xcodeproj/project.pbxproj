@@ -87,7 +87,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		7400ACE21F49F70500054B59 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		7400ACE31F49F70500054B59 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		740C54D61F480BFE00A68DC0 /* address_no_geo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = address_no_geo.json; sourceTree = "<group>"; };
 		740C54D81F480C8D00A68DC0 /* user_no_address.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = user_no_address.json; sourceTree = "<group>"; };
@@ -135,6 +134,7 @@
 		74994C0B1F48AAE40010FFEA /* posts_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = posts_array.json; sourceTree = "<group>"; };
 		74B01EB61F48557B00F9FA5C /* UsersDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersDataProvider.swift; sourceTree = "<group>"; };
 		74B97BC31F47DBDA003B9ADD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		74C153B51F4A05C000B76D15 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Main.strings"; sourceTree = "<group>"; };
 		74DFE2FF1F49D9F9009754E5 /* iPosted DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iPosted DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74DFE3001F49D9F9009754E5 /* iPosted DEV.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "iPosted DEV.plist"; path = "/Users/mindvalley/Work/iOS/Studies/iPosted/iPosted DEV.plist"; sourceTree = "<absolute>"; };
 		74DFE3011F49DB87009754E5 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -466,6 +466,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 7434B5321F47CFEF00023FB4;
 			productRefGroup = 7434B53C1F47CFEF00023FB4 /* Products */;
@@ -607,7 +608,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				7434B5431F47CFEF00023FB4 /* Base */,
-				7400ACE21F49F70500054B59 /* pt-BR */,
+				74C153B51F4A05C000B76D15 /* pt-BR */,
 			);
 			name = Main.storyboard;
 			path = ..;
