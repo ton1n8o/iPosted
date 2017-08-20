@@ -90,6 +90,14 @@ class UsersViewControllerTests: XCTestCase {
         XCTAssertEqual(postsViewController.user, userSelected)
     }
     
+    func test_DidSelectUserDelegate_Must_Be_Set_OnceViewDidLoad() {
+        
+        sut.beginAppearanceTransition(true, animated: true)
+        sut.endAppearanceTransition()
+        
+        XCTAssertNotNil(sut.dataProvider.delegate)
+    }
+    
     // MARK: - Helpers
     
     func buildUser() -> User {

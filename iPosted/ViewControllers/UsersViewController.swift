@@ -25,6 +25,7 @@ class UsersViewController: UIViewController, DidSelectUserDelegate {
         super.viewDidLoad()
         tableView?.dataSource = dataProvider
         tableView?.delegate = dataProvider
+        dataProvider.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
