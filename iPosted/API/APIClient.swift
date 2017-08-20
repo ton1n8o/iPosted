@@ -70,6 +70,9 @@ class APIClient {
         }.resume()
     }
     
+    /// Fetch user posts from the __APIEndpoints.swift__
+    ///
+    /// - Parameter completion: completion description
     func loadPosts(userId: Int, completion: @escaping ([Post]?, Error?) -> Void) {
         
         let urlPosts = "\(APIEndpoints.POSTS)?userId=\(userId)"

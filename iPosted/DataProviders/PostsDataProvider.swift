@@ -6,7 +6,6 @@
 //  Copyright © 2017 TNTStudios. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class PostsDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {

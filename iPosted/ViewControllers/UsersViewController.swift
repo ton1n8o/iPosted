@@ -31,11 +31,11 @@ class UsersViewController: UIViewController, DidSelectUserDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView?.reloadData()
-        apiClient.loadUsers { (arrayUsers, error) in
+        apiClient.loadUsers { [weak self] (arrayUsers, error) in
             if !(arrayUsers?.isEmpty ?? true) {
-                self.dataProvider.users = arrayUsers
+                self?.dataProvider.users = arrayUsers
                 DispatchQueue.main.async {
-                    self.tableView?.reloadData()
+                    self?.tableView?.reloadData()
                 }
             }
         }

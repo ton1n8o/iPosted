@@ -24,8 +24,10 @@ class PostsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.dataSource = dataProvider
-        self.tableView.delegate = dataProvider
+        tableView.dataSource = dataProvider
+        tableView.delegate = dataProvider
+        tableView.estimatedRowHeight = 150
+        tableView.rowHeight = UITableViewAutomaticDimension
         dataProvider?.posts = [Post]()
     }
     
@@ -36,12 +38,12 @@ class PostsViewController: UIViewController {
             return
         }
         
-        apiClient.loadPosts(userId: userId) { (arrayPosts, error) in
+        apiClient.loadPosts(userId: userId) { [weak self] (arrayPosts, error) in
             DispatchQueue.main.async {
                 if arrayPosts != nil {
-                    self.dataProvider?.posts = arrayPosts
+                    self?.dataProvider?.posts = arrayPosts
                 }
-                self.tableView?.reloadData()
+                self?.tableView?.reloadData()
             }
         }
     }

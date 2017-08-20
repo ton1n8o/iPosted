@@ -80,4 +80,11 @@ class PostTests: XCTestCase {
         XCTAssertNotEqual(postA, postB)
     }
     
+    func test_When_Equal_Should_Be_Equal() {
+        let postA = Post(userId: 1, id: 1, title: "", body: "my body")
+        let postB = Post(userId: 1, id: 1, title: "", body: "my body")
+        
+        XCTAssertEqual(postA, postB)
+    }
+    
 }

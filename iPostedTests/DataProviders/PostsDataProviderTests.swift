@@ -18,7 +18,6 @@ class PostsDataProviderTests: XCTestCase {
     override func setUp() {
         super.setUp()
         sut = PostsDataProvider()
-        sut.posts = [Post]()
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard
@@ -31,6 +30,7 @@ class PostsDataProviderTests: XCTestCase {
     }
     
     override func tearDown() {
+        sut = nil
         super.tearDown()
     }
     
@@ -41,6 +41,7 @@ class PostsDataProviderTests: XCTestCase {
     
     func test_NumberOf_Rows_In_Section_IsEqual_PostsCount() {
         
+        sut.posts = [Post]()
         sut.posts?.append(buildPost())
         
         var numberOfRows = tableView.numberOfRows(inSection: 0)
@@ -53,8 +54,14 @@ class PostsDataProviderTests: XCTestCase {
         XCTAssertEqual(numberOfRows, 2)
     }
     
+    func test_NumberOf_Rows_In_Section_IsEqual_Zero_When_No_Posts() {
+        let numberOfRows = tableView.numberOfRows(inSection: 0)
+        XCTAssertEqual(numberOfRows, 0)
+    }
+    
     func test_CellForRow_Returns_PostsCell() {
         
+        sut.posts = [Post]()
         sut.posts?.append(buildPost())
         tableView.reloadData()
         
@@ -69,6 +76,7 @@ class PostsDataProviderTests: XCTestCase {
         mockTableView.dataSource = sut
         mockTableView.register(MockPostCell.self, forCellReuseIdentifier: "PostCell")
         
+        sut.posts = [Post]()
         sut.posts?.append(buildPost())
         mockTableView.reloadData()
         
@@ -83,6 +91,7 @@ class PostsDataProviderTests: XCTestCase {
         mockTableView.register(MockPostCell.self, forCellReuseIdentifier: "PostCell")
         
         let post = buildPost()
+        sut.posts = [Post]()
         sut.posts?.append(post)
         mockTableView.reloadData()
         
