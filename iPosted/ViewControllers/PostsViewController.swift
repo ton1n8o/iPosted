@@ -40,10 +40,16 @@ class PostsViewController: UIViewController {
         
         apiClient.loadPosts(userId: userId) { [weak self] (arrayPosts, error) in
             DispatchQueue.main.async {
+                
                 if arrayPosts != nil {
                     self?.dataProvider?.posts = arrayPosts
                 }
                 self?.tableView?.reloadData()
+                
+                if error != nil {
+                    // TODO: we may validate the error type here and present another message.
+                    self?.showAlert(with: "Something went wrong while fetching users, please check your internet connection and try again.")
+                }
             }
         }
     }

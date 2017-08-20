@@ -18,6 +18,7 @@ class UsersViewController: UIViewController, DidSelectUserDelegate {
     // MARK: - Variables
     
     lazy var apiClient = APIClient()
+    fileprivate let refreshControl = UIRefreshControl()
     
     // MARK: - UIViewController lifecycle
     
@@ -26,19 +27,13 @@ class UsersViewController: UIViewController, DidSelectUserDelegate {
         tableView?.dataSource = dataProvider
         tableView?.delegate = dataProvider
         dataProvider.delegate = self
+        
+        setupRefreshControl()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        tableView?.reloadData()
-        apiClient.loadUsers { [weak self] (arrayUsers, error) in
-            if !(arrayUsers?.isEmpty ?? true) {
-                self?.dataProvider.users = arrayUsers
-                DispatchQueue.main.async {
-                    self?.tableView?.reloadData()
-                }
-            }
-        }
+        fetchUsers()
     }
     
     // MARK: - DidSelectUserDelegate
@@ -47,7 +42,7 @@ class UsersViewController: UIViewController, DidSelectUserDelegate {
         
         if let nextViewController = storyboard?.instantiateViewController(
             withIdentifier: "PostsViewController") as? PostsViewController {
-             nextViewController.user = dataProvider.users?[atIndex]
+            nextViewController.user = dataProvider.users?[atIndex]
             
             // present PostsViewController
             navigationController?.pushViewController(nextViewController, animated: true)
@@ -61,5 +56,45 @@ class UsersViewController: UIViewController, DidSelectUserDelegate {
         super.didReceiveMemoryWarning()
     }
     
+}
+
+extension UsersViewController {
+    
+    func setupRefreshControl() {
+        
+        refreshControl.addTarget(
+            self, action: #selector(refreshData(_:)), for: .valueChanged
+        )
+        
+        if #available(iOS 10.0, *) {
+            tableView?.refreshControl = refreshControl
+        } else {
+            tableView?.addSubview(refreshControl)
+        }
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        fetchUsers()
+    }
+    
+    fileprivate func fetchUsers() {
+        
+        apiClient.loadUsers { [weak self] (arrayUsers, error) in
+            DispatchQueue.main.async {
+                
+                if let arrayUsers = arrayUsers {
+                    self?.dataProvider.users = arrayUsers
+                }
+                
+                if error != nil {
+                    // TODO: we may validate the error type here and present another message.
+                    self?.showAlert(with: "Something went wrong while fetching users, please check your internet connection and try again.")
+                }
+                
+                self?.tableView?.reloadData()
+                self?.refreshControl.endRefreshing()
+            }
+        }
+    }
 }
 

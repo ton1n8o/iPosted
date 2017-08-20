@@ -48,10 +48,18 @@ class UsersViewControllerTests: XCTestCase {
         let tableView = MockTableView()
         sut.tableView = tableView
         
+        let expectationTableViewReload = expectation(description: "the tableView did not execute reload on time.")
+        
+        tableView.onReload = {
+            expectationTableViewReload.fulfill()
+        }
+        
         sut.beginAppearanceTransition(true, animated: true)
         sut.endAppearanceTransition()
         
-        XCTAssertEqual(tableView.realodDataGotCalled, 1)
+        waitForExpectations(timeout: 2) { (error) in
+            XCTAssertEqual(tableView.realodDataGotCalled, 1)
+        }
     }
     
     func test_APIClient_LoadUsers_Must_Be_Called_OnceViewWillAppear() {
@@ -133,18 +141,25 @@ class UsersViewControllerTests: XCTestCase {
 extension UsersViewControllerTests {
     
     class MockTableView: UITableView {
+        
         var realodDataGotCalled = 0
+        
+        // with this it is possible to know that the reload happened.
+        var onReload: (() -> Void)? = nil
         
         override func reloadData() {
             realodDataGotCalled += 1
+            onReload?()
         }
         
     }
     
     class MockAPIClient : APIClient {
         var loadUserGotCalledOnce = 0
+        var errorResponse: Error?
         override func loadUsers(completion: @escaping ([User]?, Error?) -> Void) {
             loadUserGotCalledOnce += 1
+            completion(nil, errorResponse)
         }
     }
     
@@ -155,4 +170,5 @@ extension UsersViewControllerTests {
             super.pushViewController(viewController, animated: animated)
         }
     }
+
 }

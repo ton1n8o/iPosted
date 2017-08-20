@@ -48,6 +48,7 @@
 		74994C0C1F48AAE40010FFEA /* posts_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 74994C0B1F48AAE40010FFEA /* posts_array.json */; };
 		74B01EB71F48557B00F9FA5C /* UsersDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B01EB61F48557B00F9FA5C /* UsersDataProvider.swift */; };
 		74B97BC41F47DBDA003B9ADD /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B97BC31F47DBDA003B9ADD /* User.swift */; };
+		74E96B7F1F49B4660004F22B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E96B7E1F49B4660004F22B /* Extensions.swift */; };
 		74EDAE481F4850F30095AEA3 /* UsersViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EDAE471F4850F30095AEA3 /* UsersViewControllerTests.swift */; };
 		74F9515D1F487F670082C966 /* UserCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F9515C1F487F670082C966 /* UserCellTests.swift */; };
 /* End PBXBuildFile section */
@@ -110,6 +111,7 @@
 		74994C0B1F48AAE40010FFEA /* posts_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = posts_array.json; sourceTree = "<group>"; };
 		74B01EB61F48557B00F9FA5C /* UsersDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersDataProvider.swift; sourceTree = "<group>"; };
 		74B97BC31F47DBDA003B9ADD /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		74E96B7E1F49B4660004F22B /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		74EDAE471F4850F30095AEA3 /* UsersViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewControllerTests.swift; sourceTree = "<group>"; };
 		74F9515C1F487F670082C966 /* UserCellTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCellTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -259,6 +261,7 @@
 			children = (
 				7434B5401F47CFEF00023FB4 /* UsersViewController.swift */,
 				7480FB451F495CB10070353F /* PostsViewController.swift */,
+				74E96B7E1F49B4660004F22B /* Extensions.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				7434B53F1F47CFEF00023FB4 /* AppDelegate.swift in Sources */,
 				7436815F1F47D31B00ADCC59 /* APIClient.swift in Sources */,
 				7480FB481F496B0E0070353F /* PostsDataProvider.swift in Sources */,
+				74E96B7F1F49B4660004F22B /* Extensions.swift in Sources */,
 				742DCEC11F47F0F9007EC839 /* Geo.swift in Sources */,
 				747408B21F485FD000E6F41B /* UserCell.swift in Sources */,
 				740C54DF1F480F2300A68DC0 /* Company.swift in Sources */,
