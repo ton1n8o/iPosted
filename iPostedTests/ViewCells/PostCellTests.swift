@@ -44,6 +44,15 @@ class PostCellTests: XCTestCase {
         XCTAssertNotNil(cell.bodyLabel)
     }
     
+    func test_ConfigCell_SetLabelTexts() {
+        let post = Post(userId: 1, id: 1, title: "title x", body: "body y")
+        
+        cell.configCell(with: post)
+        
+        XCTAssertEqual(cell.titleLabel.text, "title x")
+        XCTAssertEqual(cell.bodyLabel.text, "body y")
+    }
+    
 }
 
 extension PostCellTests {

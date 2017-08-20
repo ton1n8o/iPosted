@@ -67,7 +67,7 @@ class PostsDataProviderTests: XCTestCase {
         
         let mockTableView = MockTableView()
         mockTableView.dataSource = sut
-        mockTableView.register(PostCell.self, forCellReuseIdentifier: "PostCell")
+        mockTableView.register(MockPostCell.self, forCellReuseIdentifier: "PostCell")
         
         sut.posts?.append(buildPost())
         mockTableView.reloadData()

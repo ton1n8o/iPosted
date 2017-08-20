@@ -23,7 +23,9 @@ class PostsDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostCell
-        cell.configCell(with: Post(userId: 1, id: 1, title: "", body: ""))
+        if let post = posts?[indexPath.row] {
+            cell.configCell(with: post)
+        }
         return cell
     }
     
