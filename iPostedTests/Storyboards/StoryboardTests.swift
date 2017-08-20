@@ -11,8 +11,11 @@ import XCTest
 
 class StoryboardTests: XCTestCase {
     
+    var storyboard: UIStoryboard!
+    
     override func setUp() {
         super.setUp()
+        storyboard = UIStoryboard(name: "Main", bundle: nil)
     }
     
     override func tearDown() {
@@ -20,7 +23,6 @@ class StoryboardTests: XCTestCase {
     }
     
     func test_InitialViewController_Is_UsersViewController() {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let navigationController = storyboard.instantiateInitialViewController() as!
         UINavigationController
@@ -30,4 +32,9 @@ class StoryboardTests: XCTestCase {
         XCTAssertTrue(rootViewController is UsersViewController)
     }
     
+    func test_Storyboard_Contains_PostsViewController() {
+        let viewController = storyboard.instantiateViewController(withIdentifier: "PostsViewController")
+        
+        XCTAssertTrue(viewController is PostsViewController)
+    }
 }

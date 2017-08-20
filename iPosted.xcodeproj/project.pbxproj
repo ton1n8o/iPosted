@@ -35,6 +35,8 @@
 		743698201F482DC900753778 /* users_array.json in Resources */ = {isa = PBXBuildFile; fileRef = 7436981F1F482DC900753778 /* users_array.json */; };
 		7458C6B91F484DFF00919EE4 /* StoryboardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7458C6B81F484DFF00919EE4 /* StoryboardTests.swift */; };
 		747408B21F485FD000E6F41B /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 747408B11F485FD000E6F41B /* UserCell.swift */; };
+		7480FB441F495B830070353F /* PostsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480FB431F495B830070353F /* PostsViewControllerTests.swift */; };
+		7480FB461F495CB10070353F /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480FB451F495CB10070353F /* PostsViewController.swift */; };
 		74858EFB1F4859E300E4CE98 /* UsersDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858EFA1F4859E300E4CE98 /* UsersDataProviderTests.swift */; };
 		74994C051F489E2B0010FFEA /* PostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74994C041F489E2B0010FFEA /* PostTests.swift */; };
 		74994C071F489E7D0010FFEA /* post.json in Resources */ = {isa = PBXBuildFile; fileRef = 74994C061F489E7D0010FFEA /* post.json */; };
@@ -91,6 +93,8 @@
 		7436981F1F482DC900753778 /* users_array.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = users_array.json; sourceTree = "<group>"; };
 		7458C6B81F484DFF00919EE4 /* StoryboardTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryboardTests.swift; sourceTree = "<group>"; };
 		747408B11F485FD000E6F41B /* UserCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		7480FB431F495B830070353F /* PostsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewControllerTests.swift; sourceTree = "<group>"; };
+		7480FB451F495CB10070353F /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		74858EFA1F4859E300E4CE98 /* UsersDataProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersDataProviderTests.swift; sourceTree = "<group>"; };
 		74994C041F489E2B0010FFEA /* PostTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTests.swift; sourceTree = "<group>"; };
 		74994C061F489E7D0010FFEA /* post.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post.json; sourceTree = "<group>"; };
@@ -246,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				7434B5401F47CFEF00023FB4 /* UsersViewController.swift */,
+				7480FB451F495CB10070353F /* PostsViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -301,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				74EDAE471F4850F30095AEA3 /* UsersViewControllerTests.swift */,
+				7480FB431F495B830070353F /* PostsViewControllerTests.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -435,6 +441,7 @@
 				74B01EB71F48557B00F9FA5C /* UsersDataProvider.swift in Sources */,
 				7436981E1F48242E00753778 /* APIEndpoints.swift in Sources */,
 				7434B5411F47CFEF00023FB4 /* UsersViewController.swift in Sources */,
+				7480FB461F495CB10070353F /* PostsViewController.swift in Sources */,
 				7434B53F1F47CFEF00023FB4 /* AppDelegate.swift in Sources */,
 				7436815F1F47D31B00ADCC59 /* APIClient.swift in Sources */,
 				742DCEC11F47F0F9007EC839 /* Geo.swift in Sources */,
@@ -451,6 +458,7 @@
 				7434B56E1F47D7F100023FB4 /* UserTests.swift in Sources */,
 				742F85111F47DE670028458F /* JSONMockLoader.swift in Sources */,
 				74858EFB1F4859E300E4CE98 /* UsersDataProviderTests.swift in Sources */,
+				7480FB441F495B830070353F /* PostsViewControllerTests.swift in Sources */,
 				74F9515D1F487F670082C966 /* UserCellTests.swift in Sources */,
 				7436815C1F47D22100ADCC59 /* APIClientTests.swift in Sources */,
 				742DCEB91F47ED3D007EC839 /* AddressTests.swift in Sources */,

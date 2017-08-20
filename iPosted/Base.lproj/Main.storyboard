@@ -100,6 +100,24 @@
             </objects>
             <point key="canvasLocation" x="421.60000000000002" y="136.28185907046478"/>
         </scene>
+        <!--Posts View Controller-->
+        <scene sceneID="nUD-KH-VkO">
+            <objects>
+                <viewController storyboardIdentifier="PostsViewController" id="AZf-8W-swE" customClass="PostsViewController" customModule="iPosted" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FpU-z1-NHv"/>
+                        <viewControllerLayoutGuide type="bottom" id="Xmf-2f-vqE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QVg-wJ-6TX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rnL-R0-Nch" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1284" y="136"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="QMC-bU-L7c">
             <objects>
