@@ -13,7 +13,7 @@ protocol DidSelectUserDelegate: class {
     func didSelectUser(atIndex: Int)
 }
 
-class UsersDataProvider : NSObject, UITableViewDataSource, UITableViewDelegate {
+class UsersDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Variables
     
@@ -23,7 +23,13 @@ class UsersDataProvider : NSObject, UITableViewDataSource, UITableViewDelegate {
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
-        return users?.count ?? 0
+        let rows = users?.count ?? 0
+        if rows == 0 {
+            tableView.setEmptyMessage("No users found, pull to refresh...".localized)
+        }  else {
+            tableView.restore()
+        }
+        return rows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -48,7 +48,7 @@ class PostsViewController: UIViewController {
                 
                 if error != nil {
                     // TODO: we may validate the error type here and present another message.
-                    self?.showAlert(with: Constants.NETWORK_ERROR)
+                    self?.showAlert(with: Constants.NETWORK_ERROR.localized)
                 }
             }
         }

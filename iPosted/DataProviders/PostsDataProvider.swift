@@ -17,7 +17,13 @@ class PostsDataProvider: NSObject, UITableViewDataSource, UITableViewDelegate {
     // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
-        return posts?.count ?? 0
+        let rows = posts?.count ?? 0
+        if rows == 0 {
+            tableView.setEmptyMessage("loading posts...".localized)
+        }  else {
+            tableView.restore()
+        }
+        return rows
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
