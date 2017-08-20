@@ -9,9 +9,16 @@
 import Foundation
 import UIKit
 
+protocol DidSelectUserDelegate: class {
+    func didSelectUser(atIndex: Int)
+}
+
 class UsersDataProvider : NSObject, UITableViewDataSource, UITableViewDelegate {
     
     var users: [User]?
+    weak var delegate: DidSelectUserDelegate?
+    
+    // MARK: - UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection: Int) -> Int {
         return users?.count ?? 0
@@ -24,6 +31,11 @@ class UsersDataProvider : NSObject, UITableViewDataSource, UITableViewDelegate {
         }
         return cell
     }
-
+    
+    // MARK: - UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.didSelectUser(atIndex: indexPath.row)
+    }
     
 }

@@ -91,6 +91,27 @@ class UsersDataProviderTests: XCTestCase {
         XCTAssertEqual(cell.catcheUser, user)
     }
     
+    func test_When_User_Is_Selected_Call_DidSelectUserDelegate() {
+        let mockTableView = MockTableView()
+        let fakeDelegateListener = FakeDelegateListener()
+        
+        sut.delegate = fakeDelegateListener
+        
+        mockTableView.dataSource = sut
+        mockTableView.delegate = sut
+        mockTableView.register(MockUserCell.self, forCellReuseIdentifier: "UserCell")
+        
+        let user = buildUser()
+        sut.users?.append(user)
+        mockTableView.reloadData()
+        
+        let indexPath = IndexPath(row: 0, section: 0)
+        mockTableView.delegate?.tableView!(mockTableView, didSelectRowAt: indexPath)
+        
+        XCTAssertEqual(fakeDelegateListener.didSelectUserAtIndex, indexPath.row)
+        
+    }
+    
     // MARK: - Helpers
     
     func buildUser() -> User {
@@ -140,6 +161,14 @@ extension UsersDataProviderTests {
         
         override func configCell(with user: User) {
             catcheUser = user
+        }
+    }
+    
+    class FakeDelegateListener : DidSelectUserDelegate {
+        var didSelectUserAtIndex = -1
+        
+        func didSelectUser(atIndex: Int) {
+            didSelectUserAtIndex = atIndex
         }
     }
 }
