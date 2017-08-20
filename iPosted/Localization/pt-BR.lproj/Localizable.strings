@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  iPosted
+
+  Created by Antonio da Silva on 21/08/2017.
+  Copyright © 2017 TNTStudios. All rights reserved.
+*/
+
+"Something went wrong while fetching content, please check your internet connection and try again." = "Ocorreu algum erro ao carregar o conteúdo, por favor confira sua conexão a internet e tente novamente.";
+"No users found, pull to refresh..." = "Não há usuários, puxe para baixo...";
+"loading posts..." = "carregando postagens...";

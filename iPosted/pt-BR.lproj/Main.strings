@@ -1,0 +1,21 @@
+
+/* Class = "UILabel"; text = "Email"; ObjectID = "6VE-fD-ckg"; */
+"6VE-fD-ckg.text" = "Email";
+
+/* Class = "UINavigationItem"; title = "iPosted"; ObjectID = "DRg-2i-z49"; */
+"DRg-2i-z49.title" = "iPosted";
+
+/* Class = "UILabel"; text = "Address"; ObjectID = "YK7-U4-VUq"; */
+"YK7-U4-VUq.text" = "Endereço";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "dAg-Oj-81B"; */
+"dAg-Oj-81B.text" = "Nome";
+
+/* Class = "UILabel"; text = "Post Title"; ObjectID = "uHr-nq-ci3"; */
+"uHr-nq-ci3.text" = "Título da postagem";
+
+/* Class = "UILabel"; text = "UserName"; ObjectID = "ywn-ve-RTl"; */
+"ywn-ve-RTl.text" = "Nome do usuário";
+
+/* Class = "UILabel"; text = "Post Body"; ObjectID = "zCH-y9-btT"; */
+"zCH-y9-btT.text" = "Corpo da postagem";

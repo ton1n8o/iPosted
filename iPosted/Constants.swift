@@ -10,5 +10,5 @@ import Foundation
 
 struct Constants {
     
-    public static let NETWORK_ERROR = "Something went wrong while fetching users, please check your internet connection and try again."
+    public static let NETWORK_ERROR = "Something went wrong while fetching content, please check your internet connection and try again."
 }
