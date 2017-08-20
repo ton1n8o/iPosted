@@ -43,14 +43,14 @@ class UsersDataProviderTests: XCTestCase {
         
         sut.users?.append(buildUser())
         
-        var numberOfSections = tableView.numberOfRows(inSection: 0)
-        XCTAssertEqual(numberOfSections, 1)
+        var numberOfRows = tableView.numberOfRows(inSection: 0)
+        XCTAssertEqual(numberOfRows, 1)
         
         sut.users?.append(buildUser())
         tableView.reloadData()
         
-        numberOfSections = tableView.numberOfRows(inSection: 0)
-        XCTAssertEqual(numberOfSections, 2)
+        numberOfRows = tableView.numberOfRows(inSection: 0)
+        XCTAssertEqual(numberOfRows, 2)
     }
     
     func test_CellForRow_Returns_UsersCell() {

@@ -35,4 +35,8 @@ class PostsViewControllerTests: XCTestCase {
         XCTAssertTrue(sut.tableView?.dataSource is PostsDataProvider)
     }
     
+    func test_LoadingView_Sets_TableViewDelegate() {
+        XCTAssertTrue(sut.tableView?.delegate is PostsDataProvider)
+    }
+    
 }

@@ -38,6 +38,8 @@
 		7480FB441F495B830070353F /* PostsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480FB431F495B830070353F /* PostsViewControllerTests.swift */; };
 		7480FB461F495CB10070353F /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480FB451F495CB10070353F /* PostsViewController.swift */; };
 		7480FB481F496B0E0070353F /* PostsDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480FB471F496B0E0070353F /* PostsDataProvider.swift */; };
+		7480FB4A1F4970540070353F /* PostsDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480FB491F4970540070353F /* PostsDataProviderTests.swift */; };
+		7480FB4C1F4973090070353F /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7480FB4B1F4973090070353F /* PostCell.swift */; };
 		74858EFB1F4859E300E4CE98 /* UsersDataProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74858EFA1F4859E300E4CE98 /* UsersDataProviderTests.swift */; };
 		74994C051F489E2B0010FFEA /* PostTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74994C041F489E2B0010FFEA /* PostTests.swift */; };
 		74994C071F489E7D0010FFEA /* post.json in Resources */ = {isa = PBXBuildFile; fileRef = 74994C061F489E7D0010FFEA /* post.json */; };
@@ -97,6 +99,8 @@
 		7480FB431F495B830070353F /* PostsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewControllerTests.swift; sourceTree = "<group>"; };
 		7480FB451F495CB10070353F /* PostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		7480FB471F496B0E0070353F /* PostsDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsDataProvider.swift; sourceTree = "<group>"; };
+		7480FB491F4970540070353F /* PostsDataProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostsDataProviderTests.swift; sourceTree = "<group>"; };
+		7480FB4B1F4973090070353F /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		74858EFA1F4859E300E4CE98 /* UsersDataProviderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersDataProviderTests.swift; sourceTree = "<group>"; };
 		74994C041F489E2B0010FFEA /* PostTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTests.swift; sourceTree = "<group>"; };
 		74994C061F489E7D0010FFEA /* post.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = post.json; sourceTree = "<group>"; };
@@ -261,6 +265,7 @@
 			isa = PBXGroup;
 			children = (
 				747408B11F485FD000E6F41B /* UserCell.swift */,
+				7480FB4B1F4973090070353F /* PostCell.swift */,
 			);
 			path = ViewCells;
 			sourceTree = "<group>";
@@ -269,6 +274,7 @@
 			isa = PBXGroup;
 			children = (
 				74858EFA1F4859E300E4CE98 /* UsersDataProviderTests.swift */,
+				7480FB491F4970540070353F /* PostsDataProviderTests.swift */,
 			);
 			path = DataProviders;
 			sourceTree = "<group>";
@@ -451,6 +457,7 @@
 				742DCEC11F47F0F9007EC839 /* Geo.swift in Sources */,
 				747408B21F485FD000E6F41B /* UserCell.swift in Sources */,
 				740C54DF1F480F2300A68DC0 /* Company.swift in Sources */,
+				7480FB4C1F4973090070353F /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -460,6 +467,7 @@
 			files = (
 				74EDAE481F4850F30095AEA3 /* UsersViewControllerTests.swift in Sources */,
 				7434B56E1F47D7F100023FB4 /* UserTests.swift in Sources */,
+				7480FB4A1F4970540070353F /* PostsDataProviderTests.swift in Sources */,
 				742F85111F47DE670028458F /* JSONMockLoader.swift in Sources */,
 				74858EFB1F4859E300E4CE98 /* UsersDataProviderTests.swift in Sources */,
 				7480FB441F495B830070353F /* PostsViewControllerTests.swift in Sources */,

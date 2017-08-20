@@ -11,7 +11,7 @@ import UIKit
 class PostsViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var dataProvider: PostsDataProvider!
+    @IBOutlet var dataProvider: (UITableViewDataSource & UITableViewDelegate)!
     
     // MARK: - Variables
     
@@ -22,6 +22,7 @@ class PostsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = dataProvider
+        self.tableView.delegate = dataProvider
     }
 
     override func didReceiveMemoryWarning() {

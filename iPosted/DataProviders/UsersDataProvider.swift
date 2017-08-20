@@ -15,6 +15,8 @@ protocol DidSelectUserDelegate: class {
 
 class UsersDataProvider : NSObject, UITableViewDataSource, UITableViewDelegate {
     
+    // MARK: - Variables
+    
     var users: [User]?
     weak var delegate: DidSelectUserDelegate?
     
