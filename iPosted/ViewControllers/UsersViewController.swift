@@ -29,11 +29,14 @@ class UsersViewController: UIViewController, DidSelectUserDelegate {
         dataProvider.delegate = self
         
         setupRefreshControl()
+        fetchUsers()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchUsers()
+        if let index = tableView?.indexPathForSelectedRow {
+            tableView?.deselectRow(at: index, animated: true)
+        }
     }
     
     // MARK: - DidSelectUserDelegate
@@ -80,15 +83,16 @@ extension UsersViewController {
     fileprivate func fetchUsers() {
         
         apiClient.loadUsers { [weak self] (arrayUsers, error) in
+            
+            if let arrayUsers = arrayUsers {
+                self?.dataProvider.users = arrayUsers
+            }
+            
             DispatchQueue.main.async {
-                
-                if let arrayUsers = arrayUsers {
-                    self?.dataProvider.users = arrayUsers
-                }
                 
                 if error != nil {
                     // TODO: we may validate the error type here and present another message.
-                    self?.showAlert(with: "Something went wrong while fetching users, please check your internet connection and try again.")
+                    self?.showAlert(with: Constants.NETWORK_ERROR)
                 }
                 
                 self?.tableView?.reloadData()

@@ -44,7 +44,7 @@ class UsersViewControllerTests: XCTestCase {
                        sut.tableView?.delegate as? UsersDataProvider)
     }
     
-    func test_ReloadData_Must_Be_Called_OnceViewWillAppear() {
+    func test_ReloadData_Must_Be_Called_Once_ViewDidLoad() {
         let tableView = MockTableView()
         sut.tableView = tableView
         
@@ -53,23 +53,10 @@ class UsersViewControllerTests: XCTestCase {
         tableView.onReload = {
             expectationTableViewReload.fulfill()
         }
-        
-        sut.beginAppearanceTransition(true, animated: true)
-        sut.endAppearanceTransition()
-        
-        waitForExpectations(timeout: 2) { (error) in
+
+        waitForExpectations(timeout: 10) { (error) in
             XCTAssertEqual(tableView.realodDataGotCalled, 1)
         }
-    }
-    
-    func test_APIClient_LoadUsers_Must_Be_Called_OnceViewWillAppear() {
-        let mockAPI = MockAPIClient()
-        sut.apiClient = mockAPI
-        
-        sut.beginAppearanceTransition(true, animated: true)
-        sut.endAppearanceTransition()
-        
-        XCTAssertEqual(mockAPI.loadUserGotCalledOnce, 1)
     }
     
     func test_User_Selected_Show_UserPosts_ViewController() {
@@ -157,9 +144,10 @@ extension UsersViewControllerTests {
     class MockAPIClient : APIClient {
         var loadUserGotCalledOnce = 0
         var errorResponse: Error?
+        var usersResponse: [User]? = nil
         override func loadUsers(completion: @escaping ([User]?, Error?) -> Void) {
             loadUserGotCalledOnce += 1
-            completion(nil, errorResponse)
+            completion(usersResponse, errorResponse)
         }
     }
     
