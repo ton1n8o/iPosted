@@ -25,6 +25,7 @@ class APIClient {
     func loadUsers(completion: @escaping ([User]?, Error?) -> Void) {
         
         guard let url = URL(string: APIEndpoints.USERS) else {
+            // in case something goes wrong here, we'll detect during development cycle
             fatalError()
         }
         
@@ -77,6 +78,7 @@ class APIClient {
         
         let urlPosts = "\(APIEndpoints.POSTS)?userId=\(userId)"
         guard let url = URL(string: urlPosts) else {
+            // in case something goes wrong here, we'll detect during development cycle
             fatalError()
         }
         
@@ -136,9 +138,5 @@ protocol SessionProtocol {
 }
 
 extension URLSession: SessionProtocol {
-    
-}
-
-extension APIClient {
     
 }
