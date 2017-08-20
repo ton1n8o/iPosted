@@ -10,6 +10,9 @@ import UIKit
 
 class PostsViewController: UIViewController {
     
+    @IBOutlet var tableView: UITableView!
+    @IBOutlet var dataProvider: PostsDataProvider!
+    
     // MARK: - Variables
     
     var user: User?
@@ -18,6 +21,7 @@ class PostsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.dataSource = dataProvider
     }
 
     override func didReceiveMemoryWarning() {

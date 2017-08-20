@@ -111,10 +111,27 @@
                     <view key="view" contentMode="scaleToFill" id="QVg-wJ-6TX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fjd-nZ-bkS">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Fjd-nZ-bkS" firstAttribute="leading" secondItem="QVg-wJ-6TX" secondAttribute="leading" id="1Sw-ue-65s"/>
+                            <constraint firstItem="Fjd-nZ-bkS" firstAttribute="top" secondItem="FpU-z1-NHv" secondAttribute="bottom" id="WzY-0Y-jOL"/>
+                            <constraint firstAttribute="trailing" secondItem="Fjd-nZ-bkS" secondAttribute="trailing" id="svU-uR-yEY"/>
+                            <constraint firstItem="Xmf-2f-vqE" firstAttribute="top" secondItem="Fjd-nZ-bkS" secondAttribute="bottom" id="xLg-hN-iMz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="dataProvider" destination="WqX-Sk-D9R" id="7Hr-dg-PHP"/>
+                        <outlet property="tableView" destination="Fjd-nZ-bkS" id="P7Y-tp-m5S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rnL-R0-Nch" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="WqX-Sk-D9R" customClass="PostsDataProvider" customModule="iPosted" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="1284" y="136"/>
         </scene>
