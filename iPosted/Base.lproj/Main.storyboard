@@ -12,7 +12,7 @@
         <!--iPosted-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="UsersViewController" id="BYZ-38-t0r" customClass="UsersViewController" customModule="iPosted" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UsersViewController" automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="UsersViewController" customModule="iPosted" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="98" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J8J-pT-0ZR">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="100" id="ZoE-gH-rVM" customClass="UserCell" customModule="iPosted" customModuleProvider="target">
@@ -84,7 +84,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="J8J-pT-0ZR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="P2C-rt-Q51"/>
-                            <constraint firstItem="J8J-pT-0ZR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="Vjd-8m-DrU"/>
+                            <constraint firstItem="J8J-pT-0ZR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Vjd-8m-DrU"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="J8J-pT-0ZR" secondAttribute="bottom" id="n6n-u2-et7"/>
                             <constraint firstAttribute="trailing" secondItem="J8J-pT-0ZR" secondAttribute="trailing" id="nqn-Nw-tot"/>
                         </constraints>
@@ -104,7 +104,7 @@
         <!--Posts-->
         <scene sceneID="nUD-KH-VkO">
             <objects>
-                <viewController storyboardIdentifier="PostsViewController" id="AZf-8W-swE" customClass="PostsViewController" customModule="iPosted" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostsViewController" automaticallyAdjustsScrollViewInsets="NO" id="AZf-8W-swE" customClass="PostsViewController" customModule="iPosted" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="FpU-z1-NHv"/>
                         <viewControllerLayoutGuide type="bottom" id="Xmf-2f-vqE"/>
@@ -114,7 +114,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="89" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Fjd-nZ-bkS">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="150" id="cRZ-8V-ZqP" customClass="PostCell" customModule="iPosted" customModuleProvider="target">
@@ -166,7 +166,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Fjd-nZ-bkS" firstAttribute="leading" secondItem="QVg-wJ-6TX" secondAttribute="leading" id="1Sw-ue-65s"/>
-                            <constraint firstItem="Fjd-nZ-bkS" firstAttribute="top" secondItem="FpU-z1-NHv" secondAttribute="bottom" constant="-64" id="WzY-0Y-jOL"/>
+                            <constraint firstItem="Fjd-nZ-bkS" firstAttribute="top" secondItem="FpU-z1-NHv" secondAttribute="bottom" id="WzY-0Y-jOL"/>
                             <constraint firstAttribute="trailing" secondItem="Fjd-nZ-bkS" secondAttribute="trailing" id="svU-uR-yEY"/>
                             <constraint firstItem="Xmf-2f-vqE" firstAttribute="top" secondItem="Fjd-nZ-bkS" secondAttribute="bottom" id="xLg-hN-iMz"/>
                         </constraints>
