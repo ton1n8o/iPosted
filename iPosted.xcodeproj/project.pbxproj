@@ -230,7 +230,8 @@
 				74B97BC21F47DBAA003B9ADD /* Model */,
 				747408B01F485F8800E6F41B /* ViewCells */,
 				7458C6BA1F48503200919EE4 /* ViewControllers */,
-				746FDF781F49FB1D00EEF326 /* Storyboards */,
+				7434B5421F47CFEF00023FB4 /* Main.storyboard */,
+				7434B5471F47CFEF00023FB4 /* LaunchScreen.storyboard */,
 				7434B5451F47CFEF00023FB4 /* Assets.xcassets */,
 				7434B54A1F47CFEF00023FB4 /* Info.plist */,
 				74DFE3001F49D9F9009754E5 /* iPosted DEV.plist */,
@@ -299,15 +300,6 @@
 				74E96B7E1F49B4660004F22B /* Extensions.swift */,
 			);
 			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		746FDF781F49FB1D00EEF326 /* Storyboards */ = {
-			isa = PBXGroup;
-			children = (
-				7434B5421F47CFEF00023FB4 /* Main.storyboard */,
-				7434B5471F47CFEF00023FB4 /* LaunchScreen.storyboard */,
-			);
-			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		747408B01F485F8800E6F41B /* ViewCells */ = {
@@ -611,7 +603,6 @@
 				74C153B51F4A05C000B76D15 /* pt-BR */,
 			);
 			name = Main.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		7434B5471F47CFEF00023FB4 /* LaunchScreen.storyboard */ = {
@@ -621,7 +612,6 @@
 				7400ACE31F49F70500054B59 /* pt-BR */,
 			);
 			name = LaunchScreen.storyboard;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		746FDF771F49FA2D00EEF326 /* Localizable.strings */ = {
