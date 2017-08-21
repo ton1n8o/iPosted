@@ -126,7 +126,9 @@ class APIClient {
     }
     
     fileprivate func turnOffNetworkActivityIndicator() {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        DispatchQueue.main.async {
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
     }
     
 }
