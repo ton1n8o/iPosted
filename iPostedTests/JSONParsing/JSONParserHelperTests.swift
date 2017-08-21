@@ -54,9 +54,9 @@ class JSONParserHelperTests: XCTestCase {
         XCTAssertEqual(JSONParserHelper.shared.parseDouble(dbl), 20.369)
     }
     
-    func test_ParseDouble_WhenNotDouble_Returns_MinusOne() {
+    func test_ParseDouble_WhenNotDouble_Returns_DoubleValue() {
         let dbl = 452 as AnyObject
-        XCTAssertEqual(JSONParserHelper.shared.parseDouble(dbl), -1)
+        XCTAssertEqual(JSONParserHelper.shared.parseDouble(dbl), 452)
     }
     
     func test_Stract_When_KeyNot_Found_Returns_Nil() {
