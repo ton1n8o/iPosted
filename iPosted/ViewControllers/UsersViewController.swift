@@ -57,7 +57,7 @@ class UsersViewController: UIViewController, DidSelectUserDelegate {
 
 extension UsersViewController {
     
-    func setupRefreshControl() {
+    fileprivate func setupRefreshControl() {
         
         refreshControl.addTarget(
             self, action: #selector(refreshData(_:)), for: .valueChanged
@@ -83,7 +83,7 @@ extension UsersViewController {
             }
             
             DispatchQueue.main.async {
-                
+            
                 if error != nil {
                     // TODO: we may validate the error type here and present another message.
                     self?.showAlert(with: Constants.NETWORK_ERROR.localized)
